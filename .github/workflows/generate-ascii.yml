@@ -1,0 +1,19 @@
+name: generate ascci
+on: 
+  push
+jobs: 
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: co repo
+              uses: actions/checkout@v4
+            - name: install cowsay
+              run: sudo apt-get install cowsay -y
+            - name: execute cowsay
+              run: cowsay -f dragon "run for cover, I'm dragon... GRRR" >> dragon.txt
+            - name: file exists
+              run: grep -i "dragon" dragon.txt
+            - name: read file
+              run: cat dragon.txt
+            - name: list file
+              run: ls
