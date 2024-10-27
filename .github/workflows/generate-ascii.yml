@@ -11,4 +11,6 @@ jobs:
             - name: list file
               run: ls -lart
             - name: execute script
-              run: ./generate-ascii.sh
+              run: |
+                chmod +x generate-ascii.sh
+                ./generate-ascii.sh
