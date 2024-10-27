@@ -5,9 +5,14 @@ jobs:
     first_job: 
         runs-on: ubuntu-latest
         steps:
+        - name: co repo
+          uses: actions/checkout@v4
+
         - name: welcome message
           run: echo "welcome"
+
         - name: list files
           run: ls
+          
         - name: display content
           run: cat README.md
